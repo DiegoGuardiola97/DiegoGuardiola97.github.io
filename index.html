@@ -9,7 +9,7 @@
 	<input type="number" name="numero1"><br>
 	<label>Ingrese el segundo numero</label><br>
 	<input type="number" name="numero2"><br>
-	
+
 <select name="operacion">
 	<option value="sumar">sumar</option>
 	<option value="restar">restar</option>
@@ -26,6 +26,20 @@
 <<?php 
 	$num1=$_POST['numero1'];
 	$num2=$_POST['numero2'];
-	$suma=$num1+$num2;
-	echo "el resultado de la suma es :".$suma;
+
+	$operaciones=$_POST['operacion'];
+	if ($operaciones=="sumar") {
+		$suma=$num1+$num2;
+		echo "el resulto de la suma es : ".$suma;
+	}
+	elseif ($operaciones=="restar") {
+		$resta=$num1-$num2;
+		echo "el resulto de la resta es : ".$resta;
+	}
+	elseif ($operaciones=="multiplicar") {
+		$mul=$num1*$num2;
+		echo "el resulto de la multiplicación es : ".$mul;
+	elseif ($operaciones=="dividir") {
+		$div=$num1/$num2;
+		echo "el resulto de la division es : ".$div;
 ?>
